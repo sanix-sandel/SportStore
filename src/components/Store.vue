@@ -7,7 +7,7 @@
         </div>
         <div class="row">
             <div class="col-3 bg-info p-2">
-                <h4 class="text-white m-2">Categories</h4>
+                <CategoryControls/>
             </div>
             <div class="col-9 p-2">
                 <Product-list/><!-- Or just use ProductList -->
@@ -18,9 +18,10 @@
 
 <script>
     import ProductList from "./ProductList";
+    import CategoryControls from "./CategoryControls";
 
     export default{
-        components:{ProductList}
+        components:{ProductList, CategoryControls}
     }
 
 </script>
