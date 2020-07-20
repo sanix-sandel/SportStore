@@ -1,13 +1,13 @@
 import Vue from "vue";
 import Vuex from 'vuex';
 
-import Axios from "axios";
+import axios from "axios";
 
 Vue.use(Vuex)
 
-const baseURl="http://192.168.31.113:8080/";
-const productUrl="${baseUrl}/products";
-const categoriesUrl="${baseUrl}/categories";
+const baseUrl="http://localhost:3500";
+const productsUrl=`${baseUrl}/products`;
+const categoriesUrl=`${baseUrl}/categories`;
 
 
 
@@ -16,7 +16,7 @@ export default new Vuex.Store({
     state:{
         products:[],
         categoriesData:[],
-        productsTotal:testData.length,
+        productsTotal:0,
         currentPage:1,
         pageSize:4,
         currentCategory:"All"
@@ -35,7 +35,6 @@ export default new Vuex.Store({
 
         pageCount:(state, getters)=>
             Math.ceil(getters.productsFilteredByCategory.length/state.pageSize),
-
 
         categories:state=>["All", ...state.categoriesData]
     },
@@ -60,11 +59,12 @@ export default new Vuex.Store({
             state.categoriesData=data.cdata.sort();
         }
     },
+
     actions:{
         async getData(context){
-            let pdata=(await Axios.get(productsUrl)).data;
-            let cdata=(await Axios.get(categoriesUrl)).data;
-            context.commit("setData", {pdata, cdata});
+            let pdata=(await axios.get(productsUrl)).data;
+            let cdata=(await axios.get(categoriesUrl)).data;
+            context.commit("setData", { pdata, cdata});
         }
     }
 
