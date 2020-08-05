@@ -3,14 +3,14 @@ import VueRouter from "vue-router";
 
 
 import Store from "../components/Store";
-import ShoppingCart from "../compoennets/ShoppingCart";
+import ShoppingCart from "../components/ShoppingCart";
 
 Vue.use(VueRouter)
 
 export default new VueRouter({
     mode:"history",
     routes:[
-        {path:"/", componen:Store},
+        {path:"/", component:Store},
         {path:"/cart", component:ShoppingCart},
         {path:"*", redirect:"/"}
     ]
