@@ -13,6 +13,9 @@ import router from "./router";
 
 Vue.use(BootstrapVue)
 
+Vue.filter("currency", (value)=>new Intl.NumberFormat("en-Us", 
+  {style:"currency", currency:"USD"}).format(value));
+
 new Vue({
   render: h => h(App),
   store,
