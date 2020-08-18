@@ -3,6 +3,7 @@
         <div class="row">
             <div class="col bg-dark text-white">
                 <a class="navbar-brand">SANICK SPORTS STORE</a>
+                <cart-summary/>
             </div>
         </div>
         <div class="row">
@@ -19,9 +20,10 @@
 <script>
     import ProductList from "./ProductList";
     import CategoryControls from "./CategoryControls";
+    import CartSummary from "./CartSummary";
 
     export default{
-        components:{ProductList, CategoryControls}
+        components:{ProductList, CategoryControls, CartSummary}
     }
 
 </script>
