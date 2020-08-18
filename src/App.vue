@@ -12,10 +12,11 @@
       Store
     },*/
     methods:{
-      ...mapActions({getData:"getData"})
+      ...mapActions({getData:"getData", initializeCart:"cart/initializeCart"})
     },
     created(){
       this.getData();
+      this.initializeCart(this.$store);
       console.log("Life is great")
     }
   }
