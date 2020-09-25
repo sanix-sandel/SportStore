@@ -10,11 +10,14 @@ import "font-awesome/css/font-awesome.min.css";
 
 import store from "./store";
 import router from "./router";
+import Vuelidate from "vuelidate";
 
 Vue.use(BootstrapVue)
 
 Vue.filter("currency", (value)=>new Intl.NumberFormat("en-Us", 
   {style:"currency", currency:"USD"}).format(value));
+
+Vue.use(Vuelidate)
 
 new Vue({
   render: h => h(App),
