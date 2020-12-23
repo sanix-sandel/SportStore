@@ -14,7 +14,7 @@ export default{
                     "Authorization":`Bearer<${state.jwt}>`
                 }
             });
-        },
+        }},
         mutations:{
             setAuthenticated(state, header){
                 state.jwt=header;
@@ -33,5 +33,5 @@ export default{
                 }
             }
         }
-    }
+    
 }
