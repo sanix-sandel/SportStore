@@ -24,13 +24,17 @@
 
 <script>
     export default {
-        props: ["line"],
+        props: ["line"], //The parent componenet (ShoppingCartVue) will provide data to this component 
         data: function() {
             return {
                 qvalue: this.line.quantity
             }
         },
         methods: {
+
+            //When the user changes the value of the input element that displays
+            //the quantity or clicks the Remove button, the component calls the
+            //this.$emit method to send an event to its parent component
             sendChangeEvent($event) {
                 if ($event.target.value > 0) {
                     this.$emit("quantity", Number($event.target.value));
