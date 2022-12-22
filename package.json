@@ -28,7 +28,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "faker": "^4.1.0",
     "json-server": "^0.16.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
